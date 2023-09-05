@@ -1,6 +1,6 @@
 import React, { useRef, useState, useEffect } from 'react'
 import '../style/usertable.css';
-import axios from 'axios';
+import axioxClient from '../axiosClient/axiosClient';
 
 function UserTable() {
 
@@ -17,7 +17,7 @@ function UserTable() {
     var payload = {
       username: username.current.value
     }
-    axios.post("http://localhost:5000/postName", payload)
+    axioxClient.post("/postName", payload)
       .then((res) => {
         console.log(res.Result);
         window.location.reload()
@@ -32,13 +32,13 @@ function UserTable() {
   
 
   const allUser = () => {
-    axios.get("http://localhost:5000/getAllUsers")
+    axioxClient.get("/getAllUsers")
       .then((res) => { setData(res.data.Result); })
       .catch((err) => err)
   }
 
   const deleteUser = (id) => {
-    axios.delete(`http://localhost:5000/deleteUserById/${id}`)
+    axioxClient.delete(`/deleteUserById/${id}`)
       .then((res) => {
         console.log(res.remo);
         setRemo(remo.filter(e => e.id !== id))
@@ -49,7 +49,7 @@ function UserTable() {
 
   const updateUser = (id,NAME) => {
     setName(NAME)
-    axios.patch(`http://localhost:5000/updateUserById/${id}`,{ username:NAME })
+    axioxClient.patch(`/updateUserById/${id}`,{ username:NAME })
     .then((res)=>{
       const editData= res.data.Result
       const editName= editData.username
