@@ -11,6 +11,7 @@ function UserTable() {
   const [name,setName] = useState(" ");
   const [edit,setEdit] = useState(" ");
   //const [afterEdit,setAfterEdit]= useState(" ");
+  //const aw=
 
   const postUser = () => {
     var payload = {
