@@ -1,0 +1,14 @@
+.text{
+    text-align: center;
+    margin: 10%;
+}
+table,tr,td{
+    
+    border: 1px solid;
+}
+td{
+    padding: 0.7rem;
+}
+.ali{
+    margin-left: 38%;
+}

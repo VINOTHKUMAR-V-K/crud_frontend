@@ -1,0 +1,96 @@
+import React, { useRef, useState, useEffect } from 'react'
+import '../style/usertable.css';
+import axios from 'axios';
+
+function UserTable() {
+
+  const username = useRef("");
+  const [data, setData] = useState([]);
+  const [remo, setRemo] = useState([]);
+
+  const [name,setName] = useState(" ");
+  const [edit,setEdit] = useState(" ");
+  //const [afterEdit,setAfterEdit]= useState(" ");
+
+  const postUser = () => {
+    var payload = {
+      username: username.current.value
+    }
+    axios.post("http://localhost:5000/postName", payload)
+      .then((res) => {
+        console.log(res.Result);
+        window.location.reload()
+      })
+      .catch((err) => err)
+  }
+
+
+  useEffect(() => {
+    allUser();
+  }, []);
+  
+
+  const allUser = () => {
+    axios.get("http://localhost:5000/getAllUsers")
+      .then((res) => { setData(res.data.Result); })
+      .catch((err) => err)
+  }
+
+  const deleteUser = (id) => {
+    axios.delete(`http://localhost:5000/deleteUserById/${id}`)
+      .then((res) => {
+        console.log(res.remo);
+        setRemo(remo.filter(e => e.id !== id))
+        window.location.reload();
+      })  
+      .catch((err) => err)
+  }
+
+  const updateUser = (id,NAME) => {
+    setName(NAME)
+    axios.patch(`http://localhost:5000/updateUserById/${id}`,{ username:NAME })
+    .then((res)=>{
+      const editData= res.data.Result
+      const editName= editData.username
+      const editId= editData._id
+      console.log(username);
+      // setEdit(editName);
+      // if(editId === id){
+       
+      // }else{
+          
+      // }
+    })
+    .catch((err)=>err)
+  } 
+
+  return (
+    <div className='text'>
+      <span>UserName : </span>
+      <input type='text' placeholder='Enter a name' ref={username} value={name} onChange={(event)=>setName(event.target.value)} />
+      <span><button style={{ marginLeft: '10px' }} onClick={postUser} >submit</button></span>
+      <br /><br />
+
+      <div className='ali'>
+      <table>
+        <tr>
+          <th>Name</th>
+          <th>Action</th>
+        </tr>
+        {data.map((item) => (
+          <tr key={item.id}>
+            <td>{item.username}</td>
+            <td>
+              <button onClick={()=>updateUser(item._id,item.username)}>update</button>
+              <button style={{ marginLeft: '10px' }} onClick={() => deleteUser(item._id)}> delete</button>
+            </td>
+          </tr>
+        ))}
+      </table>
+      </div>
+
+    </div>
+  )
+}
+
+export default UserTable;
