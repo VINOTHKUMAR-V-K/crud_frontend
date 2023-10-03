@@ -8,6 +8,7 @@ function UserTable() {
   const [data, setData] = useState([]);
   const [remo, setRemo] = useState([]);
   const [name,setName] = useState(" ");
+  const [edit,setEdit] = useState([]);
 
   const postUser = () => {
     var payload = {
@@ -47,7 +48,8 @@ function UserTable() {
     setName(NAME)
     axioxClient.patch(`/updateUserById/${id}`,{ username:NAME })
     .then((res)=>{
-      const editData= res.data.Result
+      setEdit(res.data.Result)
+      // const editData= res.data.Result
       // const editName= editData.username
       // const editId= editData._id
     })
