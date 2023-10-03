@@ -49,6 +49,7 @@ function UserTable() {
     axioxClient.patch(`/updateUserById/${id}`,{ username:NAME })
     .then((res)=>{
       setEdit(res.data.Result)
+      console.log(edit);
       // const editData= res.data.Result
       // const editName= editData.username
       // const editId= editData._id
