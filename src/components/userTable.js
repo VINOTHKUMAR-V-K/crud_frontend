@@ -7,12 +7,7 @@ function UserTable() {
   const username = useRef("");
   const [data, setData] = useState([]);
   const [remo, setRemo] = useState([]);
-
   const [name,setName] = useState(" ");
-  const [edit,setEdit] = useState(" ");
-  //const [afterEdit,setAfterEdit]= useState(" ");
-  //const aw=
-
   const postUser = () => {
     var payload = {
       username: username.current.value
@@ -54,13 +49,6 @@ function UserTable() {
       const editData= res.data.Result
       const editName= editData.username
       const editId= editData._id
-      console.log(username);
-      // setEdit(editName);
-      // if(editId === id){
-       
-      // }else{
-          
-      // }
     })
     .catch((err)=>err)
   } 
