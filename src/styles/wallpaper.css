@@ -1,0 +1,77 @@
+.bgimg{
+    background-image: url("../asserts/wallpaper.jpg");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    min-height: 400px;
+    text-align: end;
+    background-attachment: fixed;
+}
+.login{
+    border: none;
+    background-color: transparent;
+    color: azure;
+}
+.login:hover{
+    transform: scale(1.2);
+    color: red;
+}
+.signin{
+    background-color: transparent;
+    color: azure;
+    border-color: white;
+    border-radius: 5px;
+}
+.signin:hover{
+    color: red;
+    transform: scale(1.1);
+    border-color: red;
+}
+.logo{
+    padding-top: 18px;
+    border: 2px soild transparent;
+    border-radius: 50%;
+    height: 100px;
+    width: 100px;
+    background-color:orange;
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+font-weight: bold;
+font-size: 40px;
+
+}
+.find{
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bolder;
+    font-size: 40px;
+}
+.content{
+    margin-left: 12%;
+    color: black;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bolder;
+}
+.grid:hover{
+    transform: scale(1.1);
+
+}
+ 
+li{
+    background-color:aquamarine;
+    color: black;
+    font-weight: bold;
+    border: 3px soild black;
+    border-radius: 10px;
+    width: 40%;
+    text-align: center;
+    margin: auto;
+}
+ul{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    min-height: 130px;
+}
+li:hover{
+    transform: scale(0.7);
+    background-color: gray;
+}

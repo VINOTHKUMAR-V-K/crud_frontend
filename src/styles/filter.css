@@ -1,0 +1,155 @@
+.head{
+    height: 80px;
+    background-color: red;
+    margin: auto;
+    text-align: right;
+    position: relative;
+}
+.container{
+    height: auto;
+}
+
+.box{
+    border: 2px solid white;
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    background-color: white;
+    color: red;
+    font-weight: bolder;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 30px;
+    text-align: center;
+    margin-left: 50px;
+    position: absolute;
+    top: 15px;
+    padding-top: 5px;
+}
+button{
+    margin-top: 25px;
+}
+
+.text{
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.filter{
+    margin: 10px;
+    padding: 10px;
+    border: 2px solid black;
+    max-width: 450px;
+    background-color: aliceblue;
+    box-shadow: 2px 2px 2px 2px soild rgb(70, 69, 69);
+}
+.cussins{
+    border: 2px solid black;
+    box-shadow: 2px 2px 2px 2px soild rgb(73, 72, 72);
+    max-width: 450px;
+    margin: 10px;
+    padding: 10px;
+    background-color: aliceblue;
+}
+.gt{
+    position: relative;
+    left: 200px;
+    /* top: -590px; */
+    bottom: 590px;
+    /* border: 2px solid black; */
+    width: 50%;
+    height: auto;
+
+}
+.img{
+    height: 150px;
+    width: 150px;
+    margin: 5px;
+    border-radius: 5px;
+}
+.con{
+    border: 2px solid black;
+    height: 250px;
+    max-width: 600px;
+    width: 100%;
+    box-shadow: 5px 5px 5px 5px gray;
+}
+.sub{
+    position: absolute;
+    left: 200px;
+}
+.con:hover{
+    transform: scale(1.1);
+}
+
+
+@media all and (min-width: 500px) and (max-width: 998px) {
+    .bx{
+        position: relative;
+    }
+    .con{
+        border: 2px solid black;
+        height: 260px;
+        width: 450px;
+    }
+    .gt{
+        position: absolute;
+        top: 100px;
+        left: 10px;
+    }
+    .foods{
+        text-wrap:nowrap;
+    }
+
+    
+}
+@media all and (min-width: 300px) and (max-width: 500px) {
+    .bx{
+        position: relative;
+    }
+    .con{
+        margin-left: 0;
+        border: 2px solid black;
+        height: 350px;
+        width: 350px;
+    }
+    .gt{
+        position: absolute;
+        top: 100px;
+        left: 10px;
+    }
+    .filter{
+        margin: 10px;
+        padding: 10px;
+        border: 2px solid black;
+        max-width: 300px;
+        background-color: aliceblue;
+        box-shadow: 2px 2px 2px 2px soild rgb(70, 69, 69);
+    }
+    .filter>h4,.filter>select{
+       
+        text-align: center;
+    }
+    .filter>select{
+        margin-left: 40px;
+    }
+    .foods{
+        text-wrap:wrap;
+        position: relative;
+        right: 60%;
+        top: 30px;
+    }
+    .button{
+        padding-left: 0;
+    }
+    .sub>h2,h4,h5{
+        position: relative;
+        right: 8%;
+    }
+    .sub{
+     position: absolute;
+     left: 180px; 
+     text-wrap: wrap;
+     width: 100px;
+    }
+    
+}

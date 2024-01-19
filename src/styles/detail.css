@@ -1,0 +1,24 @@
+.detail{
+    margin: auto;
+    text-align: center;
+}
+/* *{
+    margin: auto;
+    text-align: center;
+} */
+.slider{
+  margin: 10%;
+}
+.line{
+    margin-left: 0px;
+    font-size: 50px;
+}
+.line:hover{
+    transform: scale(0.9);
+    color: red;
+}
+.bttn{
+    border-radius: 4px;
+    padding: 1%;
+    
+}
